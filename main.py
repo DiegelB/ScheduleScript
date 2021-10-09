@@ -28,9 +28,21 @@ def getTask():
 #calls all the functions needed and prints out the day
 #and the task that needs to be done
 def main():
-	taskToDo = getTask()
 	print("Today is " + getDay() + " you have to "
-		  + taskToDo)
+		  + getTask())
+	
+	def changeSchedule(day, task):
+		print("test")
+		schedule = loadSchedule()
+		n = 0
+		for x in schedule:
+			n+=1
+			if x == day + "\n":
+				schedule[n] = task
+		with open('schedule.txt','w') as f:
+			for x in schedule:
+				f.writelines(x)
 
-	
-	
+
+
+
